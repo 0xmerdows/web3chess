@@ -1,3 +1,4 @@
+https://www.loom.com/share/fa3e90f39f9d4b3da005a6cacb7b8258
 # KELKIT — Chess Betting Platform on Stellar
 
 > Play chess. Wager XLM. Win on-chain.
