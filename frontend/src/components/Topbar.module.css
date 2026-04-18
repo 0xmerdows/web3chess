@@ -1,0 +1,106 @@
+.topbar {
+  height: var(--topbar-h);
+  min-height: var(--topbar-h);
+  background: #161616;
+  border-bottom: 1px solid var(--border);
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  padding: 0 1.25rem;
+  flex-shrink: 0;
+  z-index: 50;
+}
+
+.search {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  background: var(--surface2);
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  padding: 0.35rem 0.75rem;
+  flex: 1;
+  max-width: 320px;
+}
+.searchIcon { font-size: 0.85rem; color: var(--muted); }
+.searchInput {
+  background: none; border: none; color: var(--text); font-size: 0.85rem;
+  outline: none; width: 100%;
+}
+.searchInput::placeholder { color: #555; }
+
+.quickActions { display: flex; gap: 0.5rem; }
+.playBtn {
+  background: linear-gradient(135deg, var(--gold), var(--gold-dark));
+  color: #000; border: none; padding: 0.4rem 1rem; border-radius: 8px;
+  font-weight: 700; font-size: 0.82rem; cursor: pointer; transition: opacity 0.2s;
+}
+.playBtn:hover { opacity: 0.9; }
+.puzzleBtn {
+  background: var(--surface2); border: 1px solid var(--border); color: var(--muted);
+  padding: 0.4rem 0.9rem; border-radius: 8px; font-size: 0.82rem; cursor: pointer;
+  transition: all 0.2s;
+}
+.puzzleBtn:hover { border-color: #444; color: var(--text); }
+
+.right { display: flex; align-items: center; gap: 0.6rem; margin-left: auto; }
+
+.networkPill {
+  border: none; padding: 0.3rem 0.65rem; border-radius: 20px;
+  font-size: 0.72rem; font-weight: 700; cursor: pointer; transition: opacity 0.2s;
+}
+.testnet { background: rgba(240,192,64,0.12); color: var(--gold); }
+.mainnet { background: rgba(76,175,80,0.12); color: var(--green); }
+.networkPill:hover { opacity: 0.8; }
+
+.walletChip {
+  display: flex; align-items: center; gap: 0;
+  background: var(--surface2); border: 1px solid var(--border); border-radius: 10px;
+  overflow: hidden;
+}
+.walletBalance {
+  display: flex; align-items: center; gap: 0.35rem;
+  padding: 0.35rem 0.75rem; cursor: pointer; transition: background 0.15s;
+}
+.walletBalance:hover { background: #2a2a2a; }
+.xlmIcon { color: var(--gold); font-size: 0.75rem; }
+.walletBalance span:nth-child(2) { color: var(--gold); font-weight: 700; font-size: 0.88rem; }
+.xlmLabel { color: var(--muted); font-size: 0.72rem; }
+.walletDivider { width: 1px; height: 20px; background: var(--border); }
+.walletKey { padding: 0.35rem 0.65rem; color: var(--muted); font-size: 0.75rem; font-family: monospace; }
+.disconnectBtn {
+  background: none; border: none; color: #555; cursor: pointer;
+  padding: 0.35rem 0.6rem; font-size: 0.8rem; transition: color 0.2s;
+}
+.disconnectBtn:hover { color: var(--red); }
+
+.connectBtn {
+  background: linear-gradient(135deg, var(--gold), var(--gold-dark));
+  color: #000; border: none; padding: 0.4rem 1rem; border-radius: 8px;
+  font-weight: 700; font-size: 0.82rem; cursor: pointer; transition: opacity 0.2s;
+  display: flex; align-items: center; gap: 0.4rem;
+}
+.connectBtn:disabled { opacity: 0.6; cursor: not-allowed; }
+.connectBtn:hover:not(:disabled) { opacity: 0.9; }
+
+.notifWrap { position: relative; }
+
+.notifBtn {
+  background: var(--surface2); border: 1px solid var(--border); color: var(--muted);
+  width: 34px; height: 34px; border-radius: 8px; cursor: pointer;
+  position: relative; font-size: 0.9rem; transition: all 0.2s;
+  display: flex; align-items: center; justify-content: center;
+}
+.notifBtn:hover { border-color: #444; color: var(--text); }
+.notifBadge {
+  position: absolute; top: -4px; right: -4px;
+  background: var(--red); color: #fff; font-size: 0.6rem; font-weight: 800;
+  width: 14px; height: 14px; border-radius: 50%; display: flex; align-items: center; justify-content: center;
+  border: 2px solid #161616;
+}
+
+.spinner {
+  width: 14px; height: 14px; border: 2px solid #00000040; border-top-color: #000;
+  border-radius: 50%; animation: spin 0.6s linear infinite; display: inline-block;
+}
+@keyframes spin { to { transform: rotate(360deg); } }

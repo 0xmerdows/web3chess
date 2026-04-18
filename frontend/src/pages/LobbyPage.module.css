@@ -1,0 +1,197 @@
+.page {
+  max-width: 900px;
+  margin: 0 auto;
+  padding: 2rem 1rem;
+}
+
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  margin-bottom: 1.5rem;
+}
+
+.title {
+  color: #f0c040;
+  font-size: 1.8rem;
+  margin: 0 0 0.2rem;
+}
+
+.subtitle {
+  color: #666;
+  font-size: 0.85rem;
+  margin: 0;
+}
+
+.createBtn {
+  background: linear-gradient(135deg, #f0c040, #c8960c);
+  color: #000;
+  border: none;
+  padding: 0.65rem 1.4rem;
+  border-radius: 10px;
+  font-weight: 800;
+  font-size: 0.95rem;
+  cursor: pointer;
+  transition: opacity 0.2s;
+}
+.createBtn:hover { opacity: 0.9; }
+
+.controls {
+  display: flex;
+  gap: 0.75rem;
+  margin-bottom: 1.25rem;
+  flex-wrap: wrap;
+}
+
+.filters {
+  display: flex;
+  gap: 0.5rem;
+}
+
+.filterInput {
+  background: #1a1a1a;
+  border: 1px solid #333;
+  color: #fff;
+  padding: 0.45rem 0.75rem;
+  border-radius: 8px;
+  font-size: 0.85rem;
+  width: 110px;
+  outline: none;
+}
+.filterInput:focus { border-color: #f0c040; }
+.filterInput::placeholder { color: #555; }
+
+.sortSelect {
+  background: #1a1a1a;
+  border: 1px solid #333;
+  color: #aaa;
+  padding: 0.45rem 0.75rem;
+  border-radius: 8px;
+  font-size: 0.85rem;
+  outline: none;
+  cursor: pointer;
+}
+.sortSelect:focus { border-color: #f0c040; }
+
+.empty {
+  text-align: center;
+  padding: 4rem 1rem;
+  color: #555;
+}
+
+.emptyIcon {
+  font-size: 3rem;
+  display: block;
+  margin-bottom: 1rem;
+}
+
+.emptyHint {
+  color: #444;
+  font-size: 0.85rem;
+  margin-top: 0.25rem;
+}
+
+.betList {
+  display: flex;
+  flex-direction: column;
+  gap: 0.6rem;
+}
+
+.betCard {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background: #141414;
+  border: 1px solid #2a2a2a;
+  border-radius: 12px;
+  padding: 1rem 1.25rem;
+  transition: border-color 0.2s;
+}
+.betCard:hover { border-color: #3a3a3a; }
+
+.betLeft {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+.betAmount {
+  font-size: 1.3rem;
+  font-weight: 800;
+  color: #f0c040;
+}
+.betAmount span {
+  font-size: 0.8rem;
+  color: #888;
+  font-weight: 400;
+}
+
+.betTime {
+  background: #1a1a1a;
+  border: 1px solid #333;
+  color: #aaa;
+  padding: 0.2rem 0.6rem;
+  border-radius: 6px;
+  font-size: 0.8rem;
+}
+
+.betMid {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.2rem;
+}
+
+.betCreator {
+  color: #888;
+  font-size: 0.78rem;
+  font-family: monospace;
+}
+
+.betAge {
+  color: #555;
+  font-size: 0.72rem;
+}
+
+.betRight {}
+
+.joinBtn {
+  background: linear-gradient(135deg, #4caf50, #2e7d32);
+  color: #fff;
+  border: none;
+  padding: 0.55rem 1.2rem;
+  border-radius: 8px;
+  font-weight: 700;
+  cursor: pointer;
+  font-size: 0.9rem;
+  transition: opacity 0.2s;
+  min-width: 70px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.joinBtn:disabled { opacity: 0.5; cursor: not-allowed; }
+.joinBtn:hover:not(:disabled) { opacity: 0.85; }
+
+.cancelBtn {
+  background: none;
+  border: 1px solid #555;
+  color: #888;
+  padding: 0.5rem 1rem;
+  border-radius: 8px;
+  cursor: pointer;
+  font-size: 0.85rem;
+  transition: all 0.2s;
+}
+.cancelBtn:hover { border-color: #e05555; color: #e05555; }
+
+.spinner {
+  width: 16px;
+  height: 16px;
+  border: 2px solid #ffffff40;
+  border-top-color: #fff;
+  border-radius: 50%;
+  animation: spin 0.6s linear infinite;
+  display: inline-block;
+}
+@keyframes spin { to { transform: rotate(360deg); } }

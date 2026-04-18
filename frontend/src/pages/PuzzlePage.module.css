@@ -1,0 +1,49 @@
+.page { max-width: 1000px; margin: 0 auto; padding: 2rem 1rem; }
+.title { color: #f0c040; font-size: 1.8rem; margin: 0 0 0.25rem; }
+.subtitle { color: #666; font-size: 0.85rem; margin: 0 0 1.5rem; }
+
+.layout { display: grid; grid-template-columns: 260px 1fr; gap: 1.25rem; align-items: start; }
+@media (max-width: 750px) { .layout { grid-template-columns: 1fr; } }
+
+/* Puzzle list */
+.list { display: flex; flex-direction: column; gap: 0.5rem; }
+.puzzleCard { background: #141414; border: 1px solid #2a2a2a; border-radius: 10px; padding: 0.85rem; cursor: pointer; transition: border-color 0.2s; }
+.puzzleCard:hover { border-color: #3a3a3a; }
+.puzzleSelected { border-color: #f0c040 !important; background: #1a1800; }
+.puzzleSolved { opacity: 0.5; cursor: default; }
+.puzzleTop { display: flex; justify-content: space-between; margin-bottom: 0.3rem; }
+.puzzleTheme { color: #ccc; font-weight: 700; font-size: 0.85rem; }
+.puzzleDiff { font-size: 0.75rem; font-weight: 700; text-transform: capitalize; }
+.puzzleDesc { color: #888; font-size: 0.78rem; margin-bottom: 0.4rem; }
+.puzzleReward { font-size: 0.78rem; }
+.rewardBadge { color: #4caf50; font-weight: 700; }
+.solvedBadge { color: #4caf50; }
+
+/* Board section */
+.boardSection { display: flex; flex-direction: column; gap: 0.75rem; }
+.puzzleInfo { display: flex; justify-content: space-between; align-items: center; }
+.puzzleInfoLeft { display: flex; gap: 0.5rem; align-items: center; }
+.infoTheme { background: #1a1a1a; border: 1px solid #333; color: #aaa; padding: 0.2rem 0.6rem; border-radius: 6px; font-size: 0.8rem; }
+.infoDiff { font-size: 0.8rem; font-weight: 700; text-transform: capitalize; }
+.infoReward { color: #f0c040; font-weight: 700; font-size: 0.9rem; }
+.puzzleQuestion { color: #aaa; font-size: 0.88rem; margin: 0; }
+.boardWrap { display: flex; justify-content: center; }
+
+.actions { display: flex; gap: 0.75rem; align-items: center; flex-wrap: wrap; }
+.startBtn { background: linear-gradient(135deg, #f0c040, #c8960c); color: #000; border: none; padding: 0.65rem 1.5rem; border-radius: 8px; font-weight: 800; cursor: pointer; font-size: 0.9rem; }
+.startBtn:hover { opacity: 0.9; }
+.hintBtn { background: #1a1a1a; border: 1px solid #333; color: #aaa; padding: 0.55rem 1rem; border-radius: 8px; cursor: pointer; font-size: 0.85rem; transition: all 0.2s; }
+.hintBtn:hover { border-color: #f0c040; color: #f0c040; }
+.resetBtn { background: none; border: 1px solid #444; color: #888; padding: 0.55rem 1rem; border-radius: 8px; cursor: pointer; font-size: 0.85rem; transition: all 0.2s; }
+.resetBtn:hover { border-color: #888; color: #ccc; }
+
+.solvedMsg { background: rgba(76,175,80,0.1); border: 1px solid #4caf5044; color: #4caf50; padding: 0.65rem 1rem; border-radius: 8px; font-size: 0.88rem; font-weight: 600; }
+.failedMsg { background: rgba(224,85,85,0.1); border: 1px solid #e0555544; color: #e05555; padding: 0.65rem 1rem; border-radius: 8px; font-size: 0.88rem; }
+
+.progress { display: flex; align-items: center; gap: 0.75rem; }
+.progressBar { flex: 1; height: 4px; background: #2a2a2a; border-radius: 2px; overflow: hidden; }
+.progressFill { height: 100%; background: #f0c040; border-radius: 2px; transition: width 0.3s ease; }
+.progressText { color: #666; font-size: 0.75rem; white-space: nowrap; }
+
+.totalReward { margin-top: 2rem; background: #141414; border: 1px solid #2a2a2a; border-radius: 10px; padding: 1rem 1.25rem; display: flex; justify-content: space-between; align-items: center; color: #888; font-size: 0.9rem; }
+.totalXlm { color: #4caf50; font-weight: 800; font-size: 1.1rem; }

@@ -1,0 +1,123 @@
+.bar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 1.5rem;
+  height: 60px;
+  background: #0d0d0d;
+  border-bottom: 1px solid #2a2a2a;
+  position: sticky;
+  top: 0;
+  z-index: 100;
+}
+
+.logo {
+  font-size: 1.4rem;
+  color: #f0c040;
+  display: flex;
+  align-items: center;
+  gap: 0.4rem;
+}
+
+.brand {
+  font-weight: 800;
+  letter-spacing: 3px;
+  font-size: 1.1rem;
+}
+
+.right {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+}
+
+.networkBtn {
+  background: #1a1a1a;
+  border: 1px solid #333;
+  color: #aaa;
+  padding: 0.3rem 0.75rem;
+  border-radius: 6px;
+  cursor: pointer;
+  font-size: 0.8rem;
+  transition: border-color 0.2s;
+}
+.networkBtn:hover { border-color: #f0c040; color: #f0c040; }
+
+.connectBtn {
+  background: linear-gradient(135deg, #f0c040, #c8960c);
+  color: #000;
+  border: none;
+  padding: 0.5rem 1.2rem;
+  border-radius: 8px;
+  font-weight: 700;
+  cursor: pointer;
+  font-size: 0.9rem;
+  display: flex;
+  align-items: center;
+  gap: 0.4rem;
+  transition: opacity 0.2s;
+}
+.connectBtn:disabled { opacity: 0.6; cursor: not-allowed; }
+.connectBtn:hover:not(:disabled) { opacity: 0.9; }
+
+.walletInfo {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  background: #1a1a1a;
+  border: 1px solid #2a2a2a;
+  padding: 0.4rem 0.9rem;
+  border-radius: 8px;
+}
+
+.balance {
+  color: #f0c040;
+  font-weight: 700;
+  font-size: 0.9rem;
+  display: flex;
+  align-items: center;
+  gap: 0.3rem;
+}
+
+.refreshBtn {
+  background: none;
+  border: none;
+  color: #888;
+  cursor: pointer;
+  font-size: 0.9rem;
+  padding: 0;
+  line-height: 1;
+}
+.refreshBtn:hover { color: #f0c040; }
+
+.pubkey {
+  color: #888;
+  font-size: 0.8rem;
+  font-family: monospace;
+}
+
+.disconnectBtn {
+  background: none;
+  border: 1px solid #444;
+  color: #888;
+  padding: 0.2rem 0.6rem;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 0.75rem;
+  transition: all 0.2s;
+}
+.disconnectBtn:hover { border-color: #e05555; color: #e05555; }
+
+.spinner {
+  width: 16px;
+  height: 16px;
+  border: 2px solid #00000040;
+  border-top-color: #000;
+  border-radius: 50%;
+  animation: spin 0.6s linear infinite;
+  display: inline-block;
+}
+
+@keyframes spin {
+  to { transform: rotate(360deg); }
+}

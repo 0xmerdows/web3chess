@@ -1,0 +1,200 @@
+.page { padding: 1.5rem; display: flex; flex-direction: column; gap: 1.5rem; }
+
+/* Hero */
+.hero {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 2rem;
+  background: linear-gradient(135deg, #1a1a0d 0%, #1a1200 50%, #0d1a0d 100%);
+  border: 1px solid #2a2a1a;
+  border-radius: 16px;
+  padding: 2rem 2rem 2rem 2.5rem;
+  overflow: hidden;
+  position: relative;
+  min-height: 220px;
+}
+.hero::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: radial-gradient(ellipse at 70% 50%, rgba(240,192,64,0.06) 0%, transparent 70%);
+  pointer-events: none;
+}
+
+.heroLeft { flex: 1; min-width: 0; z-index: 1; }
+.heroBadge {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+  background: rgba(224,85,85,0.12);
+  border: 1px solid rgba(224,85,85,0.3);
+  color: #e05555;
+  font-size: 0.75rem;
+  font-weight: 700;
+  padding: 0.25rem 0.7rem;
+  border-radius: 20px;
+  margin-bottom: 0.9rem;
+}
+.heroTitle {
+  font-size: clamp(1.4rem, 2.5vw, 2rem);
+  font-weight: 900;
+  line-height: 1.2;
+  color: #fff;
+  margin-bottom: 0.75rem;
+}
+.heroGold { color: var(--gold); }
+.heroSub {
+  color: var(--muted);
+  font-size: 0.88rem;
+  line-height: 1.6;
+  margin-bottom: 1.25rem;
+  max-width: 380px;
+}
+.heroBtns { display: flex; gap: 0.75rem; flex-wrap: wrap; }
+.heroPlayBtn {
+  background: linear-gradient(135deg, var(--gold), var(--gold-dark));
+  color: #000;
+  border: none;
+  padding: 0.65rem 1.4rem;
+  border-radius: 10px;
+  font-weight: 800;
+  font-size: 0.9rem;
+  cursor: pointer;
+  transition: opacity 0.2s;
+}
+.heroPlayBtn:hover { opacity: 0.9; }
+.heroWatchBtn {
+  background: rgba(255,255,255,0.05);
+  border: 1px solid #333;
+  color: var(--text);
+  padding: 0.65rem 1.2rem;
+  border-radius: 10px;
+  font-size: 0.88rem;
+  cursor: pointer;
+  transition: all 0.2s;
+}
+.heroWatchBtn:hover { background: rgba(255,255,255,0.08); border-color: #444; }
+.heroHint { color: #555; font-size: 0.78rem; margin-top: 0.75rem; }
+
+.heroBoard {
+  position: relative;
+  flex-shrink: 0;
+  width: 220px;
+  z-index: 1;
+}
+.boardGlow {
+  position: absolute;
+  inset: -20px;
+  background: radial-gradient(ellipse, rgba(240,192,64,0.15) 0%, transparent 70%);
+  pointer-events: none;
+}
+
+@media (max-width: 700px) {
+  .heroBoard { display: none; }
+}
+
+/* Stats */
+.statsGrid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 0.75rem; }
+@media (max-width: 900px) { .statsGrid { grid-template-columns: repeat(2, 1fr); } }
+
+.statCard {
+  background: var(--surface); border: 1px solid var(--border); border-radius: 12px;
+  padding: 1rem 1.1rem; display: flex; align-items: center; gap: 0.9rem;
+  transition: border-color 0.2s;
+}
+.statCard:hover { border-color: #333; }
+.statIcon { font-size: 1.5rem; flex-shrink: 0; }
+.statValue { font-size: 1.3rem; font-weight: 800; line-height: 1; }
+.statLabel { color: var(--muted); font-size: 0.72rem; margin-top: 0.2rem; }
+
+/* Content grid */
+.grid { display: grid; grid-template-columns: 1fr 1fr; gap: 1rem; }
+@media (max-width: 900px) { .grid { grid-template-columns: 1fr; } }
+
+.card {
+  background: var(--surface); border: 1px solid var(--border); border-radius: 14px;
+  padding: 1.1rem; display: flex; flex-direction: column; gap: 0.75rem;
+}
+.cardHeader { display: flex; justify-content: space-between; align-items: center; }
+.cardTitle { font-size: 0.88rem; font-weight: 700; color: var(--text); }
+.cardMore { background: none; border: none; color: var(--muted); font-size: 0.78rem; cursor: pointer; transition: color 0.2s; }
+.cardMore:hover { color: var(--gold); }
+
+/* Live list */
+.liveList { display: flex; flex-direction: column; gap: 0.4rem; }
+.liveRow {
+  background: var(--surface2); border: 1px solid var(--border); border-radius: 8px;
+  padding: 0.6rem 0.75rem; cursor: pointer; transition: border-color 0.2s;
+}
+.liveRow:hover { border-color: #3a3a3a; }
+.liveMatch { display: flex; align-items: center; gap: 0.5rem; margin-bottom: 0.25rem; }
+.livePlayer { font-size: 0.82rem; color: var(--text); font-weight: 600; }
+.liveScore { color: #555; font-size: 0.72rem; }
+.liveMeta { display: flex; gap: 0.6rem; align-items: center; }
+.livePot { color: var(--gold); font-size: 0.72rem; font-weight: 700; }
+.liveSpec { color: var(--muted); font-size: 0.7rem; }
+.liveTc { background: #2a2a2a; color: #888; font-size: 0.68rem; padding: 0.1rem 0.4rem; border-radius: 4px; }
+
+/* Tournament list */
+.tourList { display: flex; flex-direction: column; gap: 0.4rem; }
+.tourRow {
+  display: flex; justify-content: space-between; align-items: center;
+  padding: 0.6rem 0.5rem; border-radius: 8px; cursor: pointer; transition: background 0.15s;
+  border-bottom: 1px solid #1e1e1e;
+}
+.tourRow:hover { background: var(--surface2); }
+.tourLeft { display: flex; flex-direction: column; gap: 0.15rem; }
+.tourName { font-size: 0.85rem; color: var(--text); font-weight: 600; }
+.tourMeta { font-size: 0.7rem; color: var(--muted); }
+.tourRight { display: flex; flex-direction: column; align-items: flex-end; gap: 0.2rem; }
+.tourPot { color: var(--gold); font-size: 0.82rem; font-weight: 700; }
+.tourStatus { font-size: 0.65rem; font-weight: 700; padding: 0.15rem 0.45rem; border-radius: 4px; }
+.active { background: rgba(224,85,85,0.15); color: #e05555; }
+.registering { background: rgba(76,175,80,0.15); color: var(--green); }
+.upcoming { background: rgba(136,136,136,0.15); color: #888; }
+
+/* Puzzle list */
+.puzzleList { display: flex; flex-direction: column; gap: 0.35rem; }
+.puzzleRow {
+  display: flex; justify-content: space-between; align-items: center;
+  padding: 0.55rem 0.5rem; border-radius: 8px; cursor: pointer; transition: background 0.15s;
+  border-bottom: 1px solid #1e1e1e;
+}
+.puzzleRow:hover { background: var(--surface2); }
+.puzzleLeft { display: flex; flex-direction: column; gap: 0.1rem; }
+.puzzleTheme { font-size: 0.82rem; color: var(--text); font-weight: 600; }
+.puzzleDesc { font-size: 0.7rem; color: var(--muted); }
+.puzzleRight { display: flex; flex-direction: column; align-items: flex-end; gap: 0.2rem; }
+.puzzleDiff { font-size: 0.65rem; font-weight: 700; padding: 0.15rem 0.45rem; border-radius: 4px; }
+.kolay { background: rgba(76,175,80,0.15); color: var(--green); }
+.orta  { background: rgba(240,192,64,0.15); color: var(--gold); }
+.zor   { background: rgba(224,85,85,0.15); color: var(--red); }
+.puzzleReward { color: var(--green); font-size: 0.72rem; font-weight: 700; }
+
+/* Quick game */
+.quickGrid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 0.5rem; }
+.quickBtn {
+  background: var(--surface2); border: 1px solid var(--border); border-radius: 10px;
+  padding: 0.75rem 0.5rem; cursor: pointer; transition: all 0.2s;
+  display: flex; flex-direction: column; align-items: center; gap: 0.2rem;
+  border-top: 3px solid var(--tc-color, #444);
+}
+.quickBtn:hover { background: #2a2a2a; border-color: var(--tc-color, #555); }
+.quickTime { font-size: 1rem; font-weight: 800; color: var(--text); }
+.quickSub { font-size: 0.65rem; color: var(--muted); }
+.customBtn {
+  background: none; border: 1px dashed #333; color: var(--muted); border-radius: 8px;
+  padding: 0.6rem; width: 100%; cursor: pointer; font-size: 0.82rem; transition: all 0.2s;
+}
+.customBtn:hover { border-color: var(--gold); color: var(--gold); }
+
+/* Bahislerim kartı — tam genişlik */
+.myBetsCard {
+  grid-column: 1 / -1;
+}
+
+.cardMoreStatic {
+  color: #555;
+  font-size: 0.75rem;
+}

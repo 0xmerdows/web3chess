@@ -1,0 +1,67 @@
+.panel {
+  position: absolute;
+  top: calc(100% + 8px);
+  right: 0;
+  width: 340px;
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: 14px;
+  box-shadow: 0 16px 48px rgba(0,0,0,0.5);
+  z-index: 300;
+  overflow: hidden;
+}
+
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0.85rem 1rem;
+  border-bottom: 1px solid var(--border);
+}
+.title { font-weight: 700; font-size: 0.9rem; color: var(--text); }
+.headerActions { display: flex; align-items: center; gap: 0.5rem; }
+.permBtn { background: none; border: none; cursor: pointer; font-size: 1rem; color: var(--muted); transition: color 0.2s; }
+.permBtn:hover { color: var(--text); }
+.allReadBtn { background: none; border: none; color: var(--muted); font-size: 0.75rem; cursor: pointer; transition: color 0.2s; }
+.allReadBtn:hover { color: var(--gold); }
+
+.list { max-height: 400px; overflow-y: auto; }
+
+.empty { text-align: center; padding: 2.5rem 1rem; color: #555; }
+.empty span { font-size: 2rem; display: block; margin-bottom: 0.5rem; }
+.empty p { font-size: 0.85rem; }
+
+.item {
+  display: flex;
+  align-items: flex-start;
+  gap: 0.75rem;
+  padding: 0.85rem 1rem;
+  cursor: pointer;
+  transition: background 0.15s;
+  border-bottom: 1px solid #1a1a1a;
+  position: relative;
+}
+.item:hover { background: var(--surface2); }
+.item:last-child { border-bottom: none; }
+.unread { background: rgba(240,192,64,0.04); }
+
+.icon { font-size: 1.1rem; flex-shrink: 0; margin-top: 0.1rem; }
+.content { flex: 1; min-width: 0; }
+.notifTitle { font-size: 0.82rem; font-weight: 700; color: var(--text); margin-bottom: 0.2rem; }
+.body { font-size: 0.75rem; color: var(--muted); line-height: 1.4; }
+
+.right { display: flex; flex-direction: column; align-items: flex-end; gap: 0.3rem; flex-shrink: 0; }
+.time { color: #555; font-size: 0.68rem; }
+.deleteBtn { background: none; border: none; color: #444; cursor: pointer; font-size: 0.7rem; transition: color 0.2s; padding: 0; }
+.deleteBtn:hover { color: var(--red); }
+
+.dot {
+  position: absolute;
+  top: 50%;
+  left: 6px;
+  transform: translateY(-50%);
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background: var(--gold);
+}

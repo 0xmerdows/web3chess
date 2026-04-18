@@ -1,0 +1,65 @@
+.page { max-width: 900px; margin: 0 auto; padding: 1.5rem; }
+
+.header { margin-bottom: 1.5rem; }
+.title { color: var(--gold); font-size: 1.6rem; margin: 0 0 0.3rem; }
+.sub { color: var(--muted); font-size: 0.85rem; margin: 0; }
+
+.layout {
+  display: grid;
+  grid-template-columns: 360px 1fr;
+  gap: 2rem;
+  align-items: start;
+}
+@media (max-width: 800px) { .layout { grid-template-columns: 1fr; } }
+
+/* Preview */
+.preview { display: flex; flex-direction: column; gap: 0.75rem; }
+.previewLabel { color: var(--muted); font-size: 0.78rem; text-transform: uppercase; letter-spacing: 0.5px; }
+.previewBoard { border-radius: 12px; overflow: hidden; display: inline-block; }
+.neonHint { color: #00ff88; font-size: 0.75rem; text-align: center; }
+
+/* Skin grid */
+.skinGrid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(120px, 1fr));
+  gap: 0.75rem;
+}
+
+.skinCard {
+  background: var(--surface);
+  border: 2px solid var(--border);
+  border-radius: 12px;
+  padding: 0.75rem;
+  cursor: pointer;
+  transition: border-color 0.2s, transform 0.15s;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.5rem;
+  position: relative;
+}
+.skinCard:hover { border-color: #444; transform: translateY(-2px); }
+.skinCard.active { border-color: var(--gold); background: rgba(240,192,64,0.06); }
+
+/* Mini 4x4 tahta */
+.miniBoard {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  width: 64px;
+  height: 64px;
+  border-radius: 6px;
+  overflow: hidden;
+  flex-shrink: 0;
+}
+.miniSquare { width: 100%; aspect-ratio: 1; }
+
+.skinLabel { font-size: 0.78rem; color: var(--text); font-weight: 600; text-align: center; }
+
+.checkmark {
+  position: absolute;
+  top: 6px;
+  right: 8px;
+  color: var(--gold);
+  font-size: 0.85rem;
+  font-weight: 800;
+}

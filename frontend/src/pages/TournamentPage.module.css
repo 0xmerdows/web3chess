@@ -1,0 +1,82 @@
+.page { max-width: 1100px; margin: 0 auto; padding: 2rem 1rem; }
+.title { color: #f0c040; font-size: 1.8rem; margin: 0 0 1.5rem; }
+
+.layout { display: grid; grid-template-columns: 280px 1fr; gap: 1.25rem; align-items: start; }
+@media (max-width: 800px) { .layout { grid-template-columns: 1fr; } }
+
+/* List */
+.list { display: flex; flex-direction: column; gap: 0.6rem; }
+.card { background: #141414; border: 1px solid #2a2a2a; border-radius: 12px; padding: 1rem; cursor: pointer; transition: border-color 0.2s; }
+.card:hover { border-color: #3a3a3a; }
+.cardSelected { border-color: #f0c040 !important; background: #1a1800; }
+.cardName { color: #ddd; font-weight: 700; font-size: 0.95rem; margin-bottom: 0.4rem; }
+.cardMeta { display: flex; justify-content: space-between; font-size: 0.78rem; margin-bottom: 0.3rem; }
+.cardFee { color: #888; }
+.cardPrize { color: #f0c040; font-weight: 700; font-size: 0.85rem; margin-bottom: 0.2rem; }
+.cardPlayers { color: #555; font-size: 0.75rem; }
+
+/* Detail */
+.detail { background: #141414; border: 1px solid #2a2a2a; border-radius: 14px; padding: 1.5rem; display: flex; flex-direction: column; gap: 1.25rem; }
+.detailHeader { display: flex; justify-content: space-between; align-items: flex-start; gap: 1rem; }
+.detailName { color: #f0c040; font-size: 1.3rem; margin: 0 0 0.3rem; }
+.detailDesc { color: #888; font-size: 0.85rem; margin: 0; }
+.statusBadge { padding: 0.3rem 0.8rem; border-radius: 20px; font-size: 0.78rem; font-weight: 700; white-space: nowrap; }
+
+.statsRow { display: grid; grid-template-columns: repeat(4, 1fr); gap: 0.75rem; }
+@media (max-width: 600px) { .statsRow { grid-template-columns: repeat(2, 1fr); } }
+.stat { background: #0d0d0d; border: 1px solid #222; border-radius: 10px; padding: 0.75rem; text-align: center; }
+.statVal { font-size: 1.2rem; font-weight: 800; color: #fff; }
+.statLbl { color: #666; font-size: 0.72rem; margin-top: 0.2rem; text-transform: uppercase; letter-spacing: 0.5px; }
+
+.registerBox { background: #0d0d0d; border: 1px solid #222; border-radius: 10px; padding: 1rem; display: flex; flex-direction: column; gap: 0.75rem; }
+.registerInfo { display: flex; justify-content: space-between; color: #888; font-size: 0.85rem; }
+.registerInfo strong { color: #f0c040; }
+.registerBtn { background: linear-gradient(135deg, #f0c040, #c8960c); color: #000; border: none; padding: 0.75rem; border-radius: 10px; font-weight: 800; font-size: 0.95rem; cursor: pointer; transition: opacity 0.2s; display: flex; align-items: center; justify-content: center; }
+.registerBtn:disabled { opacity: 0.5; cursor: not-allowed; }
+.registerBtn:hover:not(:disabled) { opacity: 0.9; }
+.hint { color: #666; font-size: 0.75rem; text-align: center; margin: 0; }
+
+.upcomingBox { background: #0d0d0d; border: 1px solid #222; border-radius: 10px; padding: 1rem; color: #888; font-size: 0.9rem; text-align: center; }
+.upcomingBox strong { color: #f0c040; }
+
+/* Bracket */
+.bracketSection {}
+.bracketTitle { color: #aaa; font-size: 0.78rem; text-transform: uppercase; letter-spacing: 0.5px; margin-bottom: 0.75rem; }
+.bracket { display: flex; gap: 1rem; overflow-x: auto; padding-bottom: 0.5rem; }
+.bracketRound { display: flex; flex-direction: column; gap: 0.75rem; min-width: 180px; }
+.roundLabel { color: #f0c040; font-size: 0.78rem; font-weight: 700; text-align: center; margin-bottom: 0.25rem; }
+
+.matchCard { background: #0d0d0d; border: 1px solid #2a2a2a; border-radius: 10px; padding: 0.6rem 0.75rem; cursor: pointer; transition: border-color 0.2s; position: relative; display: flex; flex-direction: column; gap: 0.3rem; }
+.matchCard:hover { border-color: #444; }
+.matchActive { border-color: #e05555 !important; }
+.matchPending { opacity: 0.4; cursor: default; }
+.matchVs { color: #444; font-size: 0.7rem; text-align: center; }
+
+.matchPlayer { display: flex; justify-content: space-between; align-items: center; padding: 0.2rem 0; }
+.matchWinner .matchName { color: #f0c040; font-weight: 700; }
+.matchName { color: #ccc; font-size: 0.82rem; }
+.matchRating { color: #555; font-size: 0.72rem; }
+.emptySlot { color: #444; font-size: 0.8rem; text-align: center; padding: 0.5rem; }
+
+.liveDot { position: absolute; top: 4px; right: 6px; background: #e05555; color: #fff; font-size: 0.6rem; font-weight: 800; padding: 0.1rem 0.35rem; border-radius: 4px; animation: pulse 1.5s infinite; }
+.doneDot { position: absolute; top: 4px; right: 6px; color: #4caf50; font-size: 0.75rem; }
+@keyframes pulse { 0%,100%{opacity:1} 50%{opacity:0.5} }
+
+/* Players */
+.playersSection {}
+.playersSectionTitle { color: #aaa; font-size: 0.78rem; text-transform: uppercase; letter-spacing: 0.5px; margin-bottom: 0.5rem; }
+.playersList { display: flex; flex-direction: column; gap: 0.3rem; max-height: 200px; overflow-y: auto; }
+.playerRow { display: flex; align-items: center; gap: 0.75rem; padding: 0.35rem 0; border-bottom: 1px solid #1a1a1a; font-size: 0.82rem; }
+.playerSeed { color: #555; min-width: 24px; }
+.playerName { color: #ccc; flex: 1; }
+.playerRating { color: #888; }
+
+/* Watch modal */
+.overlay { position: fixed; inset: 0; background: rgba(0,0,0,0.8); display: flex; align-items: center; justify-content: center; z-index: 200; }
+.watchModal { background: #141414; border: 1px solid #2a2a2a; border-radius: 16px; padding: 1.5rem; display: flex; flex-direction: column; gap: 1rem; align-items: center; }
+.watchHeader { display: flex; justify-content: space-between; align-items: center; width: 100%; color: #f0c040; font-weight: 700; }
+.watchHeader button { background: none; border: none; color: #888; cursor: pointer; font-size: 1.1rem; }
+.watchResult { color: #f0c040; font-weight: 700; font-size: 1rem; }
+
+.spinner { width: 18px; height: 18px; border: 2px solid #00000040; border-top-color: #000; border-radius: 50%; animation: spin 0.6s linear infinite; display: inline-block; }
+@keyframes spin { to { transform: rotate(360deg); } }

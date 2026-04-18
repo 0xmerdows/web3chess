@@ -1,0 +1,530 @@
+.page {
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 2rem 1rem;
+}
+
+.header {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  margin-bottom: 1.5rem;
+}
+
+.title {
+  color: #f0c040;
+  font-size: 1.8rem;
+  margin: 0;
+}
+
+.liveCount {
+  background: #e05555;
+  color: #fff;
+  font-size: 0.75rem;
+  font-weight: 700;
+  padding: 0.2rem 0.6rem;
+  border-radius: 20px;
+  animation: pulse 2s infinite;
+}
+
+@keyframes pulse {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0.6; }
+}
+
+.layout {
+  display: grid;
+  grid-template-columns: 1fr 340px;
+  gap: 1.25rem;
+  align-items: start;
+}
+
+@media (max-width: 800px) {
+  .layout { grid-template-columns: 1fr; }
+}
+
+/* ── Oyun listesi ── */
+.gameList {
+  display: flex;
+  flex-direction: column;
+  gap: 0.6rem;
+}
+
+.gameCard {
+  background: #141414;
+  border: 1px solid #2a2a2a;
+  border-radius: 12px;
+  padding: 1rem 1.1rem;
+  cursor: pointer;
+  transition: border-color 0.2s, background 0.2s;
+}
+.gameCard:hover { border-color: #3a3a3a; background: #181818; }
+.gameCard.selected { border-color: #f0c040; background: #1a1800; }
+
+.cardTop {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 0.6rem;
+}
+
+.players {
+  display: flex;
+  align-items: center;
+  gap: 0.6rem;
+}
+
+.player {
+  display: flex;
+  align-items: center;
+  gap: 0.35rem;
+}
+
+.colorDot {
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+  display: inline-block;
+  flex-shrink: 0;
+}
+
+.playerName {
+  color: #ddd;
+  font-size: 0.88rem;
+  font-weight: 600;
+}
+
+.rating {
+  color: #666;
+  font-size: 0.75rem;
+}
+
+.vs {
+  color: #555;
+  font-size: 0.75rem;
+}
+
+.cardMeta {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  gap: 0.2rem;
+}
+
+.tc {
+  background: #1a1a1a;
+  border: 1px solid #333;
+  color: #aaa;
+  padding: 0.15rem 0.5rem;
+  border-radius: 5px;
+  font-size: 0.75rem;
+}
+
+.pot {
+  color: #f0c040;
+  font-size: 0.8rem;
+  font-weight: 700;
+}
+
+.cardBottom {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.clocks {
+  display: flex;
+  gap: 0.75rem;
+}
+
+.clock {
+  color: #666;
+  font-size: 0.85rem;
+  font-variant-numeric: tabular-nums;
+  transition: color 0.3s;
+}
+
+.activeClock {
+  color: #f0c040 !important;
+  font-weight: 700;
+}
+
+.cardStats {
+  display: flex;
+  gap: 0.75rem;
+}
+
+.spectators, .betCount {
+  color: #555;
+  font-size: 0.75rem;
+}
+
+.miniBar {
+  height: 3px;
+  background: #333;
+  border-radius: 2px;
+  margin-top: 0.6rem;
+  overflow: hidden;
+}
+
+.miniBarFill {
+  height: 100%;
+  background: linear-gradient(90deg, #f0c040, #4caf50);
+  border-radius: 2px;
+  transition: width 0.5s ease;
+}
+
+/* ── Detay paneli ── */
+.detail {
+  background: #141414;
+  border: 1px solid #2a2a2a;
+  border-radius: 14px;
+  padding: 1.25rem;
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  position: sticky;
+  top: 80px;
+}
+
+.detailHeader {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.detailTitle {
+  color: #f0c040;
+  font-weight: 700;
+  font-size: 0.9rem;
+}
+
+.closeDetail {
+  background: none;
+  border: none;
+  color: #666;
+  cursor: pointer;
+  font-size: 1rem;
+}
+.closeDetail:hover { color: #fff; }
+
+.boardWrap {
+  display: flex;
+  justify-content: center;
+}
+
+.detailClocks {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.detailClock {
+  color: #666;
+  font-size: 1.1rem;
+  font-weight: 700;
+  font-variant-numeric: tabular-nums;
+  transition: color 0.3s;
+}
+
+.detailTc {
+  color: #555;
+  font-size: 0.8rem;
+  background: #1a1a1a;
+  border: 1px solid #333;
+  padding: 0.2rem 0.5rem;
+  border-radius: 5px;
+}
+
+/* Bahis dağılımı */
+.betDistSection {
+  background: #0d0d0d;
+  border: 1px solid #222;
+  border-radius: 8px;
+  padding: 0.75rem;
+}
+
+.betDistLabel {
+  color: #666;
+  font-size: 0.72rem;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  margin-bottom: 0.5rem;
+}
+
+.betDistRow {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.betDistSide {
+  color: #aaa;
+  font-size: 0.78rem;
+  white-space: nowrap;
+  min-width: 70px;
+}
+.betDistSide:last-child { text-align: right; }
+
+.betDistBar {
+  flex: 1;
+  height: 6px;
+  background: #333;
+  border-radius: 3px;
+  overflow: hidden;
+}
+
+.betDistFill {
+  height: 100%;
+  background: #f0c040;
+  border-radius: 3px;
+  transition: width 0.5s ease;
+}
+
+/* Bahis formu */
+.betForm {
+  background: #0d0d0d;
+  border: 1px solid #222;
+  border-radius: 10px;
+  padding: 1rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+}
+
+.betFormTitle {
+  color: #aaa;
+  font-size: 0.78rem;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  font-weight: 700;
+}
+
+.sideSelect {
+  display: flex;
+  gap: 0.5rem;
+}
+
+.sideBtn {
+  flex: 1;
+  background: #1a1a1a;
+  border: 1px solid #333;
+  color: #888;
+  padding: 0.5rem 0.4rem;
+  border-radius: 8px;
+  cursor: pointer;
+  font-size: 0.78rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.2rem;
+  transition: all 0.2s;
+}
+.sideBtn:hover { border-color: #555; color: #ccc; }
+.sideBtnActive {
+  border-color: #f0c040 !important;
+  background: rgba(240,192,64,0.1) !important;
+  color: #f0c040 !important;
+}
+
+.oddsTag {
+  font-size: 0.85rem;
+  font-weight: 800;
+  color: #4caf50;
+}
+
+.amountRow {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.amountInput {
+  flex: 1;
+  background: #141414;
+  border: 1px solid #333;
+  color: #fff;
+  padding: 0.5rem 0.7rem;
+  border-radius: 7px;
+  font-size: 0.9rem;
+  outline: none;
+  min-width: 0;
+}
+.amountInput:focus { border-color: #f0c040; }
+
+.potentialWin {
+  color: #4caf50;
+  font-size: 0.78rem;
+  white-space: nowrap;
+  font-weight: 600;
+}
+
+.placeBetBtn {
+  background: linear-gradient(135deg, #f0c040, #c8960c);
+  color: #000;
+  border: none;
+  padding: 0.65rem;
+  border-radius: 8px;
+  font-weight: 800;
+  font-size: 0.9rem;
+  cursor: pointer;
+  transition: opacity 0.2s;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.placeBetBtn:disabled { opacity: 0.5; cursor: not-allowed; }
+.placeBetBtn:hover:not(:disabled) { opacity: 0.9; }
+
+.connectHint {
+  color: #666;
+  font-size: 0.75rem;
+  text-align: center;
+  margin: 0;
+}
+
+/* Bahis listesi */
+.betsList {
+  display: flex;
+  flex-direction: column;
+  gap: 0.4rem;
+}
+
+.betsListTitle {
+  color: #666;
+  font-size: 0.72rem;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  margin-bottom: 0.25rem;
+}
+
+.betRow {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-size: 0.78rem;
+  padding: 0.3rem 0;
+  border-bottom: 1px solid #1a1a1a;
+}
+
+.betRowSide { font-size: 0.85rem; }
+.betRowKey { color: #666; font-family: monospace; flex: 1; }
+.betRowAmount { color: #f0c040; font-weight: 700; }
+.betRowOdds { color: #4caf50; font-size: 0.72rem; }
+
+/* Boş detay */
+.detailEmpty {
+  background: #141414;
+  border: 1px dashed #2a2a2a;
+  border-radius: 14px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  padding: 3rem 1rem;
+  color: #444;
+  font-size: 0.9rem;
+  text-align: center;
+}
+.detailEmpty span { font-size: 2rem; }
+
+.spinner {
+  width: 16px;
+  height: 16px;
+  border: 2px solid #00000040;
+  border-top-color: #000;
+  border-radius: 50%;
+  animation: spin 0.6s linear infinite;
+  display: inline-block;
+}
+@keyframes spin { to { transform: rotate(360deg); } }
+
+/* ── Sohbet ── */
+.chat {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  border-top: 1px solid #1a1a1a;
+  padding-top: 0.75rem;
+}
+
+.chatTitle {
+  color: #666;
+  font-size: 0.72rem;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.chatMessages {
+  height: 160px;
+  overflow-y: auto;
+  display: flex;
+  flex-direction: column;
+  gap: 0.25rem;
+  background: #0d0d0d;
+  border: 1px solid #1a1a1a;
+  border-radius: 8px;
+  padding: 0.5rem 0.6rem;
+}
+
+.chatMsg {
+  display: flex;
+  gap: 0.4rem;
+  font-size: 0.78rem;
+  line-height: 1.4;
+}
+
+.chatMsgSystem {
+  justify-content: center;
+}
+
+.systemMsg {
+  color: #444;
+  font-size: 0.72rem;
+  font-style: italic;
+}
+
+.chatUser {
+  color: #f0c040;
+  font-weight: 700;
+  white-space: nowrap;
+  flex-shrink: 0;
+}
+
+.chatText {
+  color: #ccc;
+}
+
+.chatForm {
+  display: flex;
+  gap: 0.4rem;
+}
+
+.chatInput {
+  flex: 1;
+  background: #0d0d0d;
+  border: 1px solid #2a2a2a;
+  color: #fff;
+  padding: 0.4rem 0.6rem;
+  border-radius: 6px;
+  font-size: 0.82rem;
+  outline: none;
+  min-width: 0;
+}
+.chatInput:focus { border-color: #f0c040; }
+.chatInput::placeholder { color: #444; }
+
+.chatSend {
+  background: #f0c040;
+  color: #000;
+  border: none;
+  padding: 0.4rem 0.7rem;
+  border-radius: 6px;
+  font-weight: 800;
+  cursor: pointer;
+  font-size: 0.9rem;
+  transition: opacity 0.2s;
+}
+.chatSend:disabled { opacity: 0.3; cursor: not-allowed; }
+.chatSend:hover:not(:disabled) { opacity: 0.85; }

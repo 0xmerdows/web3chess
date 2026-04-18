@@ -1,0 +1,64 @@
+.widget { display: flex; flex-direction: column; gap: 0.6rem; }
+
+.empty { text-align: center; padding: 1.5rem; color: #555; }
+.empty span { font-size: 1.5rem; display: block; margin-bottom: 0.4rem; }
+.empty p { font-size: 0.8rem; }
+
+/* Özet */
+.summary {
+  display: grid; grid-template-columns: repeat(4, 1fr);
+  background: var(--surface2); border: 1px solid var(--border);
+  border-radius: 10px; overflow: hidden;
+}
+.summaryItem { padding: 0.6rem 0.4rem; text-align: center; border-right: 1px solid var(--border); }
+.summaryItem:last-child { border-right: none; }
+.summaryVal { display: block; font-size: 1rem; font-weight: 800; }
+.summaryLbl { display: block; font-size: 0.62rem; color: var(--muted); text-transform: uppercase; letter-spacing: 0.3px; margin-top: 0.1rem; }
+.pos { color: #4caf50 !important; }
+.neg { color: #e05555 !important; }
+
+/* Filtreler */
+.filters { display: flex; gap: 0.3rem; flex-wrap: wrap; }
+.filterBtn {
+  background: none; border: 1px solid var(--border); color: var(--muted);
+  padding: 0.3rem 0.65rem; border-radius: 20px; font-size: 0.72rem;
+  cursor: pointer; transition: all 0.15s;
+}
+.filterBtn:hover { border-color: #444; color: var(--text); }
+.filterActive { background: rgba(240,192,64,0.1) !important; border-color: var(--gold) !important; color: var(--gold) !important; }
+
+/* Liste */
+.list { display: flex; flex-direction: column; gap: 0.35rem; max-height: 320px; overflow-y: auto; }
+.emptyFilter { color: #555; font-size: 0.78rem; text-align: center; padding: 1rem; }
+
+.betRow {
+  display: flex; align-items: center; gap: 0.6rem;
+  background: var(--surface2); border: 1px solid var(--border);
+  border-radius: 8px; padding: 0.55rem 0.7rem;
+  transition: border-color 0.15s;
+}
+.betRow:hover { border-color: #333; }
+.betRow.won  { border-left: 3px solid #4caf50; }
+.betRow.lost { border-left: 3px solid #e05555; }
+.betRow.active { border-left: 3px solid #f0c040; }
+.betRow.draw { border-left: 3px solid #888; }
+
+.betIcon { flex-shrink: 0; width: 20px; text-align: center; }
+.dot { display: inline-block; width: 8px; height: 8px; border-radius: 50%; animation: pulse 1.5s infinite; }
+.dotActive { background: #f0c040; }
+@keyframes pulse { 0%,100%{opacity:1} 50%{opacity:0.3} }
+.wonIcon  { color: #4caf50; font-weight: 800; font-size: 0.85rem; }
+.lostIcon { color: #e05555; font-weight: 800; font-size: 0.85rem; }
+.drawIcon { color: #888; font-weight: 800; font-size: 0.85rem; }
+.cancelIcon { color: #555; font-size: 0.85rem; }
+
+.betInfo { flex: 1; min-width: 0; }
+.betDesc { font-size: 0.78rem; color: var(--text); white-space: nowrap; overflow: hidden; text-overflow: ellipsis; margin-bottom: 0.15rem; }
+.betMeta { display: flex; gap: 0.5rem; }
+.betType { font-size: 0.65rem; color: var(--muted); }
+.betTime { font-size: 0.65rem; color: #555; }
+
+.betAmounts { text-align: right; flex-shrink: 0; }
+.betStake { font-size: 0.78rem; color: var(--text); font-weight: 600; }
+.betPotential { font-size: 0.65rem; color: #4caf50; }
+.betResult { font-size: 0.82rem; font-weight: 800; }

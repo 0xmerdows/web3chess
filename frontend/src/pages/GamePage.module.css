@@ -1,0 +1,244 @@
+.page {
+  max-width: 1000px;
+  margin: 0 auto;
+  padding: 1rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.clockRow {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background: #141414;
+  border: 1px solid #2a2a2a;
+  border-radius: 10px;
+  padding: 0.6rem 1rem;
+}
+
+.playerInfo {
+  display: flex;
+  align-items: center;
+  gap: 0.6rem;
+}
+
+.playerKey {
+  color: #888;
+  font-size: 0.8rem;
+  font-family: monospace;
+}
+
+.colorDot {
+  width: 14px;
+  height: 14px;
+  border-radius: 50%;
+  display: inline-block;
+}
+
+.clock {
+  font-size: 1.6rem;
+  font-weight: 800;
+  color: #666;
+  font-variant-numeric: tabular-nums;
+  transition: color 0.3s;
+}
+
+.activeClock {
+  color: #f0c040;
+}
+
+.main {
+  display: flex;
+  gap: 1.25rem;
+  align-items: flex-start;
+}
+
+.boardWrapper {
+  flex: 1;
+  min-width: 0;
+}
+
+.sidebar {
+  width: 220px;
+  flex-shrink: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.betInfo {
+  background: #141414;
+  border: 1px solid #2a2a2a;
+  border-radius: 10px;
+  padding: 1rem;
+  text-align: center;
+}
+
+.betLabel {
+  color: #666;
+  font-size: 0.75rem;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  margin-bottom: 0.3rem;
+}
+
+.betValue {
+  color: #f0c040;
+  font-size: 1.4rem;
+  font-weight: 800;
+}
+
+.betPayout {
+  color: #4caf50;
+  font-size: 0.8rem;
+  margin-top: 0.25rem;
+}
+
+.moveList {
+  background: #141414;
+  border: 1px solid #2a2a2a;
+  border-radius: 10px;
+  padding: 0.75rem;
+  flex: 1;
+}
+
+.moveListTitle {
+  color: #666;
+  font-size: 0.75rem;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  margin-bottom: 0.5rem;
+}
+
+.moves {
+  max-height: 280px;
+  overflow-y: auto;
+  display: flex;
+  flex-direction: column;
+  gap: 0.15rem;
+}
+
+.noMoves {
+  color: #444;
+  font-size: 0.8rem;
+}
+
+.movePair {
+  display: flex;
+  gap: 0.4rem;
+  font-size: 0.82rem;
+  align-items: center;
+}
+
+.moveNum {
+  color: #555;
+  min-width: 20px;
+}
+
+.moveWhite, .moveBlack {
+  color: #ccc;
+  font-family: monospace;
+  min-width: 50px;
+}
+
+.resignBtn {
+  background: none;
+  border: 1px solid #555;
+  color: #888;
+  padding: 0.6rem;
+  border-radius: 8px;
+  cursor: pointer;
+  font-size: 0.85rem;
+  width: 100%;
+  transition: all 0.2s;
+}
+.resignBtn:hover { border-color: #e05555; color: #e05555; }
+
+.resultPanel {
+  background: #141414;
+  border: 1px solid #2a2a2a;
+  border-radius: 10px;
+  padding: 1rem;
+  text-align: center;
+}
+
+.resultTitle {
+  font-size: 1.1rem;
+  font-weight: 800;
+  color: #f0c040;
+  margin-bottom: 0.3rem;
+}
+
+.resultReason {
+  color: #888;
+  font-size: 0.8rem;
+  margin-bottom: 0.75rem;
+}
+
+.lobbyBtn {
+  background: linear-gradient(135deg, #f0c040, #c8960c);
+  color: #000;
+  border: none;
+  padding: 0.6rem 1rem;
+  border-radius: 8px;
+  font-weight: 700;
+  cursor: pointer;
+  width: 100%;
+  font-size: 0.9rem;
+}
+.lobbyBtn:hover { opacity: 0.9; }
+
+.promoOverlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(0,0,0,0.8);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 300;
+}
+
+.promoModal {
+  background: #141414;
+  border: 1px solid #2a2a2a;
+  border-radius: 16px;
+  padding: 2rem;
+  text-align: center;
+}
+
+.promoModal p {
+  color: #aaa;
+  margin-bottom: 1rem;
+}
+
+.promoOptions {
+  display: flex;
+  gap: 0.75rem;
+}
+
+.promoBtn {
+  background: #1a1a1a;
+  border: 1px solid #333;
+  color: #fff;
+  font-size: 2.5rem;
+  width: 70px;
+  height: 70px;
+  border-radius: 10px;
+  cursor: pointer;
+  transition: all 0.2s;
+}
+.promoBtn:hover { border-color: #f0c040; background: #2a2a2a; }
+
+.turnIndicator {
+  text-align: center;
+  color: #888;
+  font-size: 0.85rem;
+  padding: 0.5rem;
+}
+
+@media (max-width: 700px) {
+  .main { flex-direction: column; }
+  .sidebar { width: 100%; }
+  .clock { font-size: 1.2rem; }
+}
